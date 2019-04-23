@@ -10,26 +10,23 @@ namespace SQLInitializer.Library
 {
     public static class Initializer
     {
-        public static string _connectionString = string.Empty;
-        public static string _table = string.Empty;
-
-        private static DataSet dataSet;
         private static Random rd = new Random();
 
-        public static void Initialize(int count)
+        public static void Initialize(int count, string connectionString, string table)
         {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-                    DataTable table = GetDataTable();
-                    string cmdString =
-                        $"INSERT INTO {_table} VALUES({GetValues(table)})";
-                    SqlCommand command = new SqlCommand(cmdString);
+                    DataTable tbl = GetDataTable(connectionString, table);
+                    string cmdString = string.Empty;
+                    SqlCommand command;
 
                     for (int i = 0; i < count; i++)
                     {
+                        cmdString = $"INSERT INTO {table} VALUES({GetValues(tbl)})";
+                        command = new SqlCommand(cmdString, connection);
                         command.ExecuteNonQuery();
                     }
                 }
@@ -41,14 +38,19 @@ namespace SQLInitializer.Library
             }
         }
 
-        private static DataTable GetDataTable()
+        private static DataTable GetDataTable(string connectionString, string table)
         {
-            DataTable table = new DataTable();
-            SqlCommand command = new SqlCommand($"SELECT * FROM {_table}");
-            SqlDataReader reader = command.ExecuteReader();
-            table.Load(reader);
+            DataTable tbl = new DataTable();
 
-            return table;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand($"SELECT * FROM {table}", connection);
+                SqlDataReader reader = command.ExecuteReader();
+                tbl.Load(reader);
+            }
+
+            return tbl;
         }
 
         private static string GetValues(DataTable table)
@@ -69,7 +71,7 @@ namespace SQLInitializer.Library
                         values += $"'{rd.Next(1990, 2018)}-{rd.Next(0, 13)}-{rd.Next(0, 32)}', ";
                         break;
                     case "System.Int32":
-                        values += $"{rd.Next(-200000, 200001)}, ";
+                        values += $"{rd.Next(-200000, 200001)}";
                         break;
                 }
             }
