@@ -56,7 +56,7 @@ namespace SQLInitializer.Library
             string values = string.Empty;
             string dataType = string.Empty;
 
-            for(int i = 0; i < table.Columns.Count; i++)
+            for (int i = 0; i < table.Columns.Count; i++)
             {
                 dataType = table.Columns[i].DataType.ToString();
 

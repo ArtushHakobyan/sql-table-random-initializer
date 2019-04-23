@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FBEA43DF-1982-49ED-9E18-C5EEE2CD0E6F}</ProjectGuid>
+    <ProjectGuid>{A55CA87B-F8B8-4F07-BE56-CDD373318EE8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SQLInitializer.Library</RootNamespace>
