@@ -66,7 +66,10 @@ namespace SQLInitializer.Library
                         values += rd.Next(0, 2) + ", ";
                         break;
                     case "System.DateTime":
-                        values += $"{rd.Next(1990, 2018)}-{rd.Next(0, 13)}-{rd.Next(0, 32)}, ";
+                        values += $"'{rd.Next(1990, 2018)}-{rd.Next(0, 13)}-{rd.Next(0, 32)}', ";
+                        break;
+                    case "System.Int32":
+                        values += $"{rd.Next(-200000, 200001)}, ";
                         break;
                 }
             }
