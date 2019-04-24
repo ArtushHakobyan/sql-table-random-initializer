@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLInitializer.Library", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLInitializer.Test", "SQLInitializer.Test\SQLInitializer.Test.csproj", "{D82DED0D-B024-41F5-B06D-9D32E07972C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLInitializer.App", "SQLInitializer.App\SQLInitializer.App.csproj", "{5B7C015A-0C3B-4799-83FC-27D05B5CA910}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D82DED0D-B024-41F5-B06D-9D32E07972C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D82DED0D-B024-41F5-B06D-9D32E07972C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D82DED0D-B024-41F5-B06D-9D32E07972C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B7C015A-0C3B-4799-83FC-27D05B5CA910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B7C015A-0C3B-4799-83FC-27D05B5CA910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B7C015A-0C3B-4799-83FC-27D05B5CA910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B7C015A-0C3B-4799-83FC-27D05B5CA910}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,31 @@
+﻿<Window x:Class="SQLInitializer.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SQLInitializer.App"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Data Source" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDataSource" HorizontalAlignment="Left" Height="22" Margin="125,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+        <Label Content="Initial Catalog" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtInitialCatalog" HorizontalAlignment="Left" Height="22" Margin="125,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+        <Label Content="Integrated Security" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chkSecurity" Content="" HorizontalAlignment="Left" Margin="125,94,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbTables" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="125,132,0,0"/>
+        <Label Content="Table" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="259,132,0,0" VerticalAlignment="Top" Width="51" Click="BtnRefresh_Click"/>
+        <Button x:Name="btnInitialize" Content="Initialize" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top" Width="96" Click="BtnInitialize_Click"/>
+        <Label Content="Rows to Insert" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,172,0,0"/>
+        <TextBox x:Name="txtCount" HorizontalAlignment="Left" Height="22" Margin="125,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" PreviewTextInput="NumberValidationTextBox"/>
+        <ListView HorizontalAlignment="Left" Height="154" Margin="6,257,0,0" VerticalAlignment="Top" Width="569">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
