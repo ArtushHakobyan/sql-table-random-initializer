@@ -11,8 +11,22 @@ namespace SQLInitializer.Test
     {
         static void Main(string[] args)
         {
-            Initializer.Initialize(2,
-                "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=TestDB;Integrated Security=true;", "dbo.text");
+            try
+            {
+                Console.WriteLine("Adding rows in table. Please wait...");
+
+                int x = Initializer.Initialize(100,
+                "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=TestDB;Integrated Security=true;",
+                "dbo.test2");
+
+                Console.WriteLine($"{x} rows added successfuly.");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+
+                throw;
+            }
         }
     }
 }
