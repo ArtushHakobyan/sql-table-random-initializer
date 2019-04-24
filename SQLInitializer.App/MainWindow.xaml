@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SQLInitializer.App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600" ResizeMode="NoResize">
+        Title="SQL Table Initializer" Height="450" Width="600" ResizeMode="NoResize">
     <Grid>
         <Label Content="Data Source" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtDataSource" HorizontalAlignment="Left" Height="22" Margin="125,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
@@ -19,13 +19,7 @@
         <Button x:Name="btnInitialize" Content="Initialize" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top" Width="96" Click="BtnInitialize_Click"/>
         <Label Content="Rows to Insert" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,172,0,0"/>
         <TextBox x:Name="txtCount" HorizontalAlignment="Left" Height="22" Margin="125,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" PreviewTextInput="NumberValidationTextBox"/>
-        <ListView HorizontalAlignment="Left" Height="154" Margin="6,257,0,0" VerticalAlignment="Top" Width="569">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DataGrid x:Name="grdResult" HorizontalAlignment="Left" Height="156" Margin="10,246,0,0" VerticalAlignment="Top" Width="564" ItemsSource="{Binding}"/>
 
     </Grid>
 </Window>
