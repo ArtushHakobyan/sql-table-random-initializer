@@ -67,14 +67,34 @@ namespace SQLInitializer.Library
                     case "System.Boolean":
                         values += rd.Next(0, 2) + ", ";
                         break;
+                    case "System.Byte":
+                        values += rd.NextByte() + ", ";
+                        break;
+                    case "System.Char":
+                        values += rd.NextChar() + ", ";
+                        break;
                     case "System.DateTime":
-                        values += $"'{rd.Next(1990, 2018)}-{rd.Next(0, 13)}-{rd.Next(0, 32)}', ";
+                        values += rd.NextDateTime() + ", ";
+                        break;
+                    case "System.Decimal":
+                        values += rd.NextDecimal() + ", ";
+                        break;
+                    case "System.Double":
+                        values += rd.NextDouble() + ", ";
                         break;
                     case "System.Int32":
-                        values += $"{rd.Next(-200000, 200001)}";
+                        values += rd.Next(-200000, 200001) + ", ";
+                        break;
+                    case "System.String":
+                        values += rd.NextString(rd.Next(6, 9), false) + ", ";
+                        break;
+                    case "System.TimeSpan":
+                        values += rd.NextTimeSpan() + ", ";
                         break;
                 }
             }
+
+            values = values.Substring(0, values.Length - 2);
 
             return values;
         }
