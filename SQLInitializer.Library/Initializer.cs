@@ -74,7 +74,7 @@ namespace SQLInitializer.Library
                         values += rd.NextChar() + ", ";
                         break;
                     case "System.DateTime":
-                        values += rd.NextDateTime() + ", ";
+                        values += $"'{rd.NextDateTime()}', ";
                         break;
                     case "System.Decimal":
                         values += rd.NextDecimal() + ", ";
@@ -86,10 +86,13 @@ namespace SQLInitializer.Library
                         values += rd.Next(-200000, 200001) + ", ";
                         break;
                     case "System.String":
-                        values += rd.NextString(rd.Next(6, 9), false) + ", ";
+                        values += $"'{rd.NextString(rd.Next(6, 9), false)}', ";
                         break;
                     case "System.TimeSpan":
                         values += rd.NextTimeSpan() + ", ";
+                        break;
+                    case "System.Guid":
+                        values += $"'{rd.NextGuid()}', ";
                         break;
                 }
             }

@@ -57,6 +57,11 @@ namespace SQLInitializer.Library
             return new TimeSpan(0, 0, 0, rd.Next(86400));
         }
 
+        public static Guid NextGuid(this Random rd)
+        {
+            return new Guid();
+        }
+
         private static int GetDecimalScale(Random r)
         {
             for (int i = 0; i <= 28; i++)
