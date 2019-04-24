@@ -25,7 +25,7 @@ namespace SQLInitializer.Library
 
         public static string NextDateTime(this Random rd)
         {
-            return $"'{rd.Next(1990, 2018)}-{rd.Next(0, 13)}-{rd.Next(0, 32)}', ";
+            return $"{rd.Next(1990, 2019)}-{rd.Next(0, 13)}-{rd.Next(0, 28)}";
         }
 
         public static Byte NextByte(this Random rd)
