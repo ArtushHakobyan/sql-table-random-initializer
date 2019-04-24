@@ -52,7 +52,7 @@ namespace SQLInitializer.Library
             return new Decimal(a, b, c, n, (Byte)s);
         }
 
-        public static TimeSpan RandomTimeSpan(this Random rd)
+        public static TimeSpan NextTimeSpan(this Random rd)
         {
             return new TimeSpan(0, 0, 0, rd.Next(86400));
         }
