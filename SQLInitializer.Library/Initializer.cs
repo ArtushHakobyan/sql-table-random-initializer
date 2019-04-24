@@ -12,7 +12,7 @@ namespace SQLInitializer.Library
     {
         private static Random rd = new Random();
 
-        public static void Initialize(int count, string connectionString, string table)
+        public static int Initialize(int count, string connectionString, string table)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -29,6 +29,8 @@ namespace SQLInitializer.Library
                         command = new SqlCommand(cmdString, connection);
                         command.ExecuteNonQuery();
                     }
+
+                    return count;
                 }
                 catch (Exception)
                 {

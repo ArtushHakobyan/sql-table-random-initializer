@@ -25,7 +25,7 @@ namespace SQLInitializer.Library
 
         public static string NextDateTime(this Random rd)
         {
-            return $"{rd.Next(1990, 2019)}-{rd.Next(0, 13)}-{rd.Next(0, 28)}";
+            return $"{rd.Next(1990, 2019)}-{rd.Next(1, 13)}-{rd.Next(1, 28)}";
         }
 
         public static Byte NextByte(this Random rd)
@@ -59,7 +59,7 @@ namespace SQLInitializer.Library
 
         public static Guid NextGuid(this Random rd)
         {
-            return new Guid();
+            return Guid.NewGuid();
         }
 
         private static int GetDecimalScale(Random r)
